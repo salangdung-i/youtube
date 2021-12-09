@@ -1,7 +1,8 @@
 
 import React, { useEffect, useState } from 'react';
-import './app.css';
+import SearchHeader from './component/search_header/search_header';
 import VideoList from './component/video_list/video_list';
+import styles from './app.module.css';
 
 function App() {
   const [videos, setVideos] = useState([]);
@@ -20,7 +21,13 @@ function App() {
     // fetch를 받아온 이후 처리한 부분
 
   }, []);
-  return <VideoList videos={videos} />;
+
+  return (
+    <div className={styles.app}>
+      <SearchHeader />
+      <VideoList videos={videos} />
+    </div>
+  );
 }
 
 export default App;
