@@ -1,13 +1,22 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import styles from './search_header.module.css';
 
-const SearchHeader = (props) => {
-  const onClick = () => {
-    console.log('onclick');
+const SearchHeader = ({ onSearch }) => {
+  const inputRef = useRef();
+  const handleSearch = () => {
+    const value = inputRef.current.value;
+    onSearch(value);
+
   };
 
-  const onkeyPress = () => {
-    console.log('onkeypress');
+  const onClick = () => {
+    handleSearch();
+  };
+
+  const onkeyPress = (event) => {
+    if (event.key === 'Enter') {
+      handleSearch();
+    }
   };
 
 
@@ -17,7 +26,13 @@ const SearchHeader = (props) => {
         <img className={styles.img} src="/images/logo.png" alt="logo" />
         <h1 className={styles.title}>Youtube</h1>
       </div>
-      <input className={styles.input} type="search" placeholder="Search..." onKeyPress={onkeyPress} />
+      <input
+        ref={inputRef}
+        className={styles.input}
+        type="search"
+        placeholder="Search..."
+        onKeyPress={onkeyPress}
+      />
       <button className={styles.button} type="submit" onClick={onClick}>
         <img className={styles.buttonImg} src="/images/search.png" alt="search" />
       </button>
