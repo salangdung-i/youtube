@@ -1,6 +1,13 @@
 .contanier {
-  width: 50%;
   padding: 0.2em;
+}
+
+.contanier.grid{
+  width: 50%;
+}
+
+.contanier.list{
+  width: 100%;
 }
 
 .video {
