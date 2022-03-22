@@ -8,6 +8,11 @@
 - PostCSS
 <br/><br/>
 
+### 실행 페이지 🔗 
+- https://salangdung-i.github.io/youtube/
+<br>
+
+
 ### 구현한 방법과 이유에 대한 간략한 내용
 Youtube API를 이용하여 만드는 Youtube viewer 입니다.   
 📖 첫 번째 구현 시 강의를 보고 공부하며 구현하였습니다.   
