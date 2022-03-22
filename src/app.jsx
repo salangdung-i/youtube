@@ -18,7 +18,7 @@ const App = ({ youtubeFetch }) => {
     youtubeFetch
       .search(query)
       .then(videos => setVideos(videos));
-  }, []);
+  }, [youtubeFetch]);
 
 
   useEffect(() => {
@@ -38,6 +38,7 @@ const App = ({ youtubeFetch }) => {
         )}
         <div className={styles.list}>
           <VideoList videos={videos} onVideoClick={selectVideo} display={selectedVideo ? 'list' : 'grid'} />
+
         </div>
       </section>
     </div>
